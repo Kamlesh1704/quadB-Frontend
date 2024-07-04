@@ -8,7 +8,7 @@ export default function Home() {
     const [data,setData] = useState([])
     useEffect(() => {
       const fetchingData = async () => {
-        const url = "http://localhost:3000/";
+        const url = "https://quadb-backend-2-kf1a.onrender/";
         const options = {
             method:'GET',
             "Content-Type":"application/json"
