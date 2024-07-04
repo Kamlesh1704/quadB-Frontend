@@ -1,0 +1,46 @@
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.heading{
+    color: #6CC9CA;
+    font-size: 30px;
+    font-family: verdana;
+    padding-left: 20px;
+}
+.telegram{
+    height: 40px;
+    width: 180px;
+    margin-left: 40px;
+    margin-right: 15px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    background-color: #6CC9CA;
+    border: none;
+    border-radius: 10px;
+}
+.toggle{
+    background-color: transparent;
+    border: none;
+    width: 50px;
+    margin-right: 20px;
+}
+.butt{
+    font-size: 60px;
+    color: white;
+    margin-right: 30px
+    
+}
+.butt-white{
+    color: white;
+}
+.butt-blue{
+    color: #191D28;
+}
+.counter{
+    color: #6CC9CA;
+    font-size: 20px;
+    font-weight: bold;
+}
