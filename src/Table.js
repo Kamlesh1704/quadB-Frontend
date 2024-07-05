@@ -1,13 +1,27 @@
 import './Table.css'
 
-import React from 'react'
+import {React, useState, useEffect} from 'react'
 import { FaRupeeSign } from "react-icons/fa";
 import ThemeContext from './context/ThemeContext';
 import { CustomRow } from './styledComponents';
 
-const Table = props => {
-    const {dataa} = props
-    
+const Table = () => {
+    const [fetchedData, setFetchData] = useState([])
+
+    useEffect(() => {
+        const storeDatainDB = async () => {
+          const url = "https://quadb-backend-2-kf1a.onrender.com/"
+          const options ={
+            method: 'GET'
+          }
+          const response = await fetch(url, options);
+          const daata = await response.json()
+          setFetchData(daata);
+          console.log(daata)
+        }
+        storeDatainDB()
+      },[])
+
     return(
     <ThemeContext>
         {value => {
@@ -23,12 +37,12 @@ const Table = props => {
                   <th>Volume</th>
                 </tr>
                 <br/>
-                {dataa.map((each) => (
+                {fetchedData.map((each) => (
                     <>
                     <CustomRow isBlueTheme={isBlueTheme} className='tablerows'>
-                        <td className='td'>{each.id}</td>
+                        <td className='td'>{fetchedData.indexOf(each) + 1}</td>
                         <td>{each.base_unit}</td>
-                        <td><FaRupeeSign/> {each.lastt}</td>
+                        <td><FaRupeeSign/> {each.last}</td>
                         <td><FaRupeeSign /> {each.buy}/<FaRupeeSign/> {each.sell}</td>
                         <td>{each.name}</td>
                         <td className='tdd'>{each.volume}</td>

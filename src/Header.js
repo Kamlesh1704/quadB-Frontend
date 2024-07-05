@@ -6,7 +6,7 @@ import { MdOutlineToggleOn } from "react-icons/md";
 import { RiToggleLine } from "react-icons/ri";
 
 import './Header.css'
-export default function Header() {
+export default function Header(props) {
   const [counter, setCounter] = useState(60);
 
   useEffect(() => {
@@ -18,6 +18,7 @@ export default function Header() {
 
     return () => clearInterval(counterId);
   }, []);
+  
 
   return (
     <ThemeContext.Consumer>
